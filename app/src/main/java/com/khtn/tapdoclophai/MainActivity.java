@@ -18,9 +18,8 @@ public class MainActivity extends AppCompatActivity {
         btnClickOnMe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,"CuongLe & PhucDinh",Toast.LENGTH_LONG).show();
-                String s = "Change name from zxcvila2112 to Cuongleinc";
-                Toast.makeText(MainActivity.this,s,Toast.LENGTH_LONG).show();
+                String sText = "Author by CuongLe & PhucDinh";
+                Toast.makeText(MainActivity.this,sText,Toast.LENGTH_LONG).show();
             }
         });
     }
