@@ -17,12 +17,13 @@
         android:id="@+id/txtHello"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="157dp" />
+        android:layout_marginTop="157dp"
+        android:textIsSelectable="false" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ClickOnme"
+        android:text="Click Me"
         android:id="@+id/btnClick"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
