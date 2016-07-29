@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this,"CuongLe & PhucDinh",Toast.LENGTH_LONG).show();
+                String s = "Demo commit";
+                Toast.makeText(MainActivity.this,s,Toast.LENGTH_LONG).show();
             }
         });
     }
