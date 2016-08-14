@@ -1,25 +1,70 @@
 package com.khtn.tapdoclophai;
 
+import android.content.res.AssetFileDescriptor;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.khtn.tapdoclophai.utility.AudioPlayer;
+import com.khtn.tapdoclophai.utility.ImageLoader;
+
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnClickOnMe;
+    private Button btnTapDoc;
+    private AudioPlayer audioPlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        btnClickOnMe = (Button) findViewById(R.id.btnClick);
-        btnClickOnMe.setOnClickListener(new View.OnClickListener() {
+
+        TextView tx = (TextView)findViewById(R.id.txtHello);
+        TextView tx2 = (TextView)findViewById(R.id.textView);
+
+        Typeface custom_font = Typeface.createFromAsset(getAssets(),  "fonts/HP001_4_hang_bold.ttf");
+
+        tx.setTypeface(custom_font);
+        tx2.setTypeface(custom_font);
+
+        //audioPlayer = new AudioPlayer(getApplicationContext(), R.raw.audio_test);
+
+        AssetFileDescriptor afd = null;
+        try {
+            afd = getAssets().openFd("audio/audio_test.mp3");
+            audioPlayer = new AudioPlayer(afd.getFileDescriptor(),afd.getStartOffset(),afd.getLength());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        btnTapDoc = (Button) findViewById(R.id.btnTapDoc);
+        btnTapDoc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,"CuongLe & PhucDinh",Toast.LENGTH_LONG).show();
+
+                //Intent intent = new Intent(MainActivity.this, TapDocActivity.class);
+                //startActivity(intent);
+                if(audioPlayer.isPlaying()) {
+                    audioPlayer.restart();
+                }
+                audioPlayer.play();
             }
         });
+
+        ImageView imgView = (ImageView) findViewById(R.id.imageView);
+        imgView.setImageBitmap(ImageLoader.load(getString(R.string.base64_img_test)));
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(audioPlayer != null) {
+            audioPlayer.release();
+        }
     }
 }
