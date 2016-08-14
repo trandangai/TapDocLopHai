@@ -5,6 +5,8 @@ import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -21,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
         TextView tx = (TextView)findViewById(R.id.txtHello);
@@ -36,11 +38,13 @@ public class MainActivity extends AppCompatActivity {
 
         AssetFileDescriptor afd = null;
         try {
-            afd = getAssets().openFd("audio/audio_test.mp3");
+            afd = getAssets().openFd("audio/P4_Doan1.m4a");
             audioPlayer = new AudioPlayer(afd.getFileDescriptor(),afd.getStartOffset(),afd.getLength());
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
 
         btnTapDoc = (Button) findViewById(R.id.btnTapDoc);
         btnTapDoc.setOnClickListener(new View.OnClickListener() {
@@ -49,6 +53,13 @@ public class MainActivity extends AppCompatActivity {
 
                 //Intent intent = new Intent(MainActivity.this, TapDocActivity.class);
                 //startActivity(intent);
+                AssetFileDescriptor afd = null;
+                try {
+                    afd = getAssets().openFd("audio/P4_Doan1.m4a");
+                    audioPlayer = new AudioPlayer(afd.getFileDescriptor(),afd.getStartOffset(),afd.getLength());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 if(audioPlayer.isPlaying()) {
                     audioPlayer.restart();
                 }
@@ -58,6 +69,20 @@ public class MainActivity extends AppCompatActivity {
 
         ImageView imgView = (ImageView) findViewById(R.id.imageView);
         imgView.setImageBitmap(ImageLoader.load(getString(R.string.base64_img_test)));
+ 
+
+        // CuongLe
+        try {
+            afd = getAssets().openFd("audio/ThemeSong.mp3");
+            audioPlayer = new AudioPlayer(afd.getFileDescriptor(),afd.getStartOffset(),afd.getLength());
+            if(audioPlayer.isPlaying()) {
+                audioPlayer.restart();
+            }
+            audioPlayer.play();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     @Override
