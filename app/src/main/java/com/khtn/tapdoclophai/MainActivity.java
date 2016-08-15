@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
         ImageView imgView = (ImageView) findViewById(R.id.imageView);
         imgView.setImageBitmap(ImageLoader.load(getString(R.string.base64_img_test)));
- 
+
 
         // CuongLe
         try {
