@@ -46,31 +46,26 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        btnTapDoc = (Button) findViewById(R.id.btnTapDoc);
-        btnTapDoc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                //Intent intent = new Intent(MainActivity.this, TapDocActivity.class);
-                //startActivity(intent);
-                AssetFileDescriptor afd = null;
-                try {
-                    afd = getAssets().openFd("audio/P4_Doan1.m4a");
-                    audioPlayer = new AudioPlayer(afd.getFileDescriptor(),afd.getStartOffset(),afd.getLength());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                if(audioPlayer.isPlaying()) {
-                    audioPlayer.restart();
-                }
-                audioPlayer.play();
-            }
-        });
-
-        ImageView imgView = (ImageView) findViewById(R.id.imageView);
-        imgView.setImageBitmap(ImageLoader.load(getString(R.string.base64_img_test)));
-
-
+//        btnTapDoc = (Button) findViewById(R.id.btnTapDoc);
+//        btnTapDoc.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                //Intent intent = new Intent(MainActivity.this, TapDocActivity.class);
+//                //startActivity(intent);
+//                AssetFileDescriptor afd = null;
+//                try {
+//                    afd = getAssets().openFd("audio/P4_Doan1.m4a");
+//                    audioPlayer = new AudioPlayer(afd.getFileDescriptor(),afd.getStartOffset(),afd.getLength());
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//                if(audioPlayer.isPlaying()) {
+//                    audioPlayer.restart();
+//                }
+//                audioPlayer.play();
+//            }
+//        });
         // CuongLe
         try {
             afd = getAssets().openFd("audio/ThemeSong.mp3");

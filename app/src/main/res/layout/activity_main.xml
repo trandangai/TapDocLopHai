@@ -15,7 +15,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.15"
+
         android:gravity="center_horizontal">
 
         <TextView
@@ -37,81 +37,65 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
             android:includeFontPadding="false"
-            android:textSize="30sp"
+            android:textSize="40sp"
             android:text="@string/app_title"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textIsSelectable="false" />
+            android:textIsSelectable="false"
+            android:textColor="#eb0f3f"
+            android:textStyle="bold|italic" />
     </RelativeLayout>
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5"
+        android:layout_weight="1"
         android:gravity="center_vertical">
 
         <TableRow
+            android:gravity="center"
             android:id="@+id/TableRow01"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_height="0dp">
 
-            <Button
-                android:id="@+id/btnTapDoc"
+            <ImageButton
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_margin="20dp"
-                android:layout_weight="1"
-                android:background="#81ffad"
-                android:textSize="20sp"
-                android:text="@string/btn_tapdoc" />
+                android:layout_height="wrap_content"
+                android:id="@+id/imgbtnTapDoc"
+                android:layout_margin="10dp"
+                android:background="@drawable/tapdoc" />
 
-            <Button
-                android:id="@+id/btnBaiTap"
+            <ImageButton
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_margin="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_weight="1"
-                android:background="#ffe57c"
-                android:textSize="20sp"
-                android:text="@string/btn_cauhoi" />
+                android:layout_height="wrap_content"
+                android:id="@+id/imgbtnCauHoi"
+                android:layout_margin="10dp"
+                android:background="@drawable/cauhoi" />
+
+
         </TableRow>
 
         <TableRow
             android:id="@+id/TableRow02"
+            android:gravity="center"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:textSize="20sp"
-            android:layout_weight="1">
+            android:layout_height="0dp">
 
-            <Button
-                android:id="@+id/btnDoVui"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_margin="20dp"
-                android:layout_weight="1"
-                android:background="#ff91fb"
-                android:textSize="20sp"
-                android:text="@string/btn_baitap" />
 
-            <Button
-                android:id="@+id/btnAbout"
+            <ImageButton
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_margin="20dp"
-                android:layout_weight="1"
-                android:background="#fe8080"
-                android:text="@string/btn_about"
-                android:textSize="20sp"/>
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:id="@+id/imgbtnBaiTap"
+                android:background="@drawable/baitap" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:id="@+id/imgbtnCaiDat"
+                android:background="@drawable/caidat" />
         </TableRow>
 
     </TableLayout>
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0.15" />
 
 </LinearLayout>
