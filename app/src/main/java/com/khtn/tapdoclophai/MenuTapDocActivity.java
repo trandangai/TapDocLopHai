@@ -33,7 +33,7 @@ public class MenuTapDocActivity extends AppCompatActivity {
         arrMenuBaiHoc.add(new MenuBaiHoc("2","Phần thưởng"));
         arrMenuBaiHoc.add(new MenuBaiHoc("3","Bạn của nai nhỏ"));
         arrMenuBaiHoc.add(new MenuBaiHoc("4","Bím tóc đuôi sam"));
-
+        arrMenuBaiHoc.add(new MenuBaiHoc("1","2"));
 
         MenuBaiHocArrayAdapter adapter = new MenuBaiHocArrayAdapter
                 (MenuTapDocActivity.this,R.layout.customlayout_menubaihoc,arrMenuBaiHoc);
