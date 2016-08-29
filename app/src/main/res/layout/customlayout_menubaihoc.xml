@@ -11,12 +11,13 @@
         android:background="@drawable/simpleboard" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="203dp"
+        android:layout_height="59dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
         android:id="@+id/txtCustomBaiHoc"
         android:layout_gravity="center"
-        android:textColor="#ffffff"
-        android:textStyle="bold" />
+        android:textColor="#fcfafa"
+        android:textAlignment="center" />
+
 </FrameLayout>
