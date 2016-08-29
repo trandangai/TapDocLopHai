@@ -3,13 +3,11 @@ package com.khtn.tapdoclophai;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.khtn.tapdoclophai.utility.MenuBaiHoc;
-import com.khtn.tapdoclophai.utility.MenuBaiHocArrayAdapter;
+import com.khtn.tapdoclophai.pojo.BaiHoc;
+import com.khtn.tapdoclophai.adapter.MenuBaiHocArrayAdapter;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MenuTapDocActivity extends AppCompatActivity {
@@ -28,49 +26,49 @@ public class MenuTapDocActivity extends AppCompatActivity {
     }
     public void addControl()
     {
-        ArrayList<MenuBaiHoc> arrMenuBaiHoc = new ArrayList<MenuBaiHoc>();
-        arrMenuBaiHoc.add(new MenuBaiHoc("1","Có công mài sắt có ngày nên kim"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("2","Tự thuật"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("3","Ngày hôm qua đâu rồi"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("4","Phần thưởng"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("5","Làm việc thật là vui"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("6","Mít làm thơ"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("7","Bạn của nai nhỏ"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("8","Gọi bạn"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("9","Bím tóc đuôi xam"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("10","Trên chiếc bè"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("11","Chiếc bút mực"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("12","Mục lục sách"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("13","Cái trống trường em"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("14","Mẫu giấy vụn"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("15","Ngồi trường mới"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("16","Người thầy cũ"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("17","Thời khóa biểu"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("18","Cô giáo lớp em"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("19","Sáng kiến của bé Hà"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("20","Ngày lễ"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("21","Bưu thiếp"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("22","Ông và cháu"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("23","Kể ngắn về người thân"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("24","Ôn tập"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("25","Bà cháu"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("26","Cây xoài của ông em"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("27","Chia buồn an ủi"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("28","Sự tích cây vú sữa"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("29","Mẹ"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("30","Bông hoa niềm vui"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("31","Quà của bố"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("32","Bà cháu"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("33","Câu chuyện bó đũa"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("34","Bà cháu"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("35","Hai anh em"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("36","Bé Hoa"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("37","Con chó nhà hàng xóm"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("38","Thời gian biểu"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("39","Tìm ngọc"));
-        arrMenuBaiHoc.add(new MenuBaiHoc("40","Gà tỉ tê với gà"));
+        ArrayList<BaiHoc> arrBaiHoc = new ArrayList<BaiHoc>();
+        arrBaiHoc.add(new BaiHoc("1","Có công mài sắt có ngày nên kim"));
+        arrBaiHoc.add(new BaiHoc("2","Tự thuật"));
+        arrBaiHoc.add(new BaiHoc("3","Ngày hôm qua đâu rồi"));
+        arrBaiHoc.add(new BaiHoc("4","Phần thưởng"));
+        arrBaiHoc.add(new BaiHoc("5","Làm việc thật là vui"));
+        arrBaiHoc.add(new BaiHoc("6","Mít làm thơ"));
+        arrBaiHoc.add(new BaiHoc("7","Bạn của nai nhỏ"));
+        arrBaiHoc.add(new BaiHoc("8","Gọi bạn"));
+        arrBaiHoc.add(new BaiHoc("9","Bím tóc đuôi xam"));
+        arrBaiHoc.add(new BaiHoc("10","Trên chiếc bè"));
+        arrBaiHoc.add(new BaiHoc("11","Chiếc bút mực"));
+        arrBaiHoc.add(new BaiHoc("12","Mục lục sách"));
+        arrBaiHoc.add(new BaiHoc("13","Cái trống trường em"));
+        arrBaiHoc.add(new BaiHoc("14","Mẫu giấy vụn"));
+        arrBaiHoc.add(new BaiHoc("15","Ngồi trường mới"));
+        arrBaiHoc.add(new BaiHoc("16","Người thầy cũ"));
+        arrBaiHoc.add(new BaiHoc("17","Thời khóa biểu"));
+        arrBaiHoc.add(new BaiHoc("18","Cô giáo lớp em"));
+        arrBaiHoc.add(new BaiHoc("19","Sáng kiến của bé Hà"));
+        arrBaiHoc.add(new BaiHoc("20","Ngày lễ"));
+        arrBaiHoc.add(new BaiHoc("21","Bưu thiếp"));
+        arrBaiHoc.add(new BaiHoc("22","Ông và cháu"));
+        arrBaiHoc.add(new BaiHoc("23","Kể ngắn về người thân"));
+        arrBaiHoc.add(new BaiHoc("24","Ôn tập"));
+        arrBaiHoc.add(new BaiHoc("25","Bà cháu"));
+        arrBaiHoc.add(new BaiHoc("26","Cây xoài của ông em"));
+        arrBaiHoc.add(new BaiHoc("27","Chia buồn an ủi"));
+        arrBaiHoc.add(new BaiHoc("28","Sự tích cây vú sữa"));
+        arrBaiHoc.add(new BaiHoc("29","Mẹ"));
+        arrBaiHoc.add(new BaiHoc("30","Bông hoa niềm vui"));
+        arrBaiHoc.add(new BaiHoc("31","Quà của bố"));
+        arrBaiHoc.add(new BaiHoc("32","Bà cháu"));
+        arrBaiHoc.add(new BaiHoc("33","Câu chuyện bó đũa"));
+        arrBaiHoc.add(new BaiHoc("34","Bà cháu"));
+        arrBaiHoc.add(new BaiHoc("35","Hai anh em"));
+        arrBaiHoc.add(new BaiHoc("36","Bé Hoa"));
+        arrBaiHoc.add(new BaiHoc("37","Con chó nhà hàng xóm"));
+        arrBaiHoc.add(new BaiHoc("38","Thời gian biểu"));
+        arrBaiHoc.add(new BaiHoc("39","Tìm ngọc"));
+        arrBaiHoc.add(new BaiHoc("40","Gà tỉ tê với gà"));
         MenuBaiHocArrayAdapter adapter = new MenuBaiHocArrayAdapter
-                (MenuTapDocActivity.this,R.layout.customlayout_menubaihoc,arrMenuBaiHoc);
+                (MenuTapDocActivity.this,R.layout.customlayout_menubaihoc, arrBaiHoc);
 
         lvListbaiHoc.setAdapter(adapter);
     }

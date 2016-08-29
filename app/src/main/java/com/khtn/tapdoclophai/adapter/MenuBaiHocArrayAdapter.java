@@ -1,32 +1,32 @@
-package com.khtn.tapdoclophai.utility;
+package com.khtn.tapdoclophai.adapter;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.khtn.tapdoclophai.R;
+import com.khtn.tapdoclophai.pojo.BaiHoc;
 
 import java.util.ArrayList;
 
 /**
  * Created by CuongLe on 8/29/2016.
  */
-public class MenuBaiHocArrayAdapter extends ArrayAdapter<MenuBaiHoc> {
+public class MenuBaiHocArrayAdapter extends ArrayAdapter<BaiHoc> {
 
     Activity contex = null;
-    ArrayList<MenuBaiHoc> arrMenuBaiHoc=null;
+    ArrayList<BaiHoc> arrBaiHoc =null;
     int layoutID;
 
-    public MenuBaiHocArrayAdapter(Activity context,int layoutID,ArrayList<MenuBaiHoc> arr)
+    public MenuBaiHocArrayAdapter(Activity context,int layoutID,ArrayList<BaiHoc> arr)
     {
         super(context, layoutID, arr);
         this.contex =context;
         this.layoutID=layoutID;
-        this.arrMenuBaiHoc = arr;
+        this.arrBaiHoc = arr;
     }
 
     @Override
@@ -36,7 +36,7 @@ public class MenuBaiHocArrayAdapter extends ArrayAdapter<MenuBaiHoc> {
 
         final TextView txtcustomMenuBaihoc =
                 (TextView) convertView.findViewById(R.id.txtCustomBaiHoc);
-        final MenuBaiHoc item = arrMenuBaiHoc.get(position);
+        final BaiHoc item = arrBaiHoc.get(position);
         txtcustomMenuBaihoc.setText(item.toString());
 
         return convertView;

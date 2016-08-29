@@ -1,9 +1,6 @@
 package com.khtn.tapdoclophai.utility;
 
-import android.content.Context;
 import android.media.MediaPlayer;
-import android.os.Debug;
-import android.util.Log;
 
 import java.io.File;
 import java.io.FileDescriptor;
@@ -42,6 +39,10 @@ public class AudioPlayer {
 
     public void stop() {
         mediaPlayer.stop();
+    }
+
+    public void pause() {
+        mediaPlayer.pause();
     }
 
     public void restart() {

@@ -3,25 +3,24 @@ package com.khtn.tapdoclophai;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.khtn.tapdoclophai.utility.AudioPlayer;
-import com.khtn.tapdoclophai.utility.ImageLoader;
 
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
     private ImageButton btnTapDoc;
+    private ImageButton btnCauHoi;
     private AudioPlayer audioPlayer;
+    private AssetFileDescriptor afd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,22 +37,22 @@ public class MainActivity extends AppCompatActivity {
 
         //audioPlayer = new AudioPlayer(getApplicationContext(), R.raw.audio_test);
 
-        AssetFileDescriptor afd = null;
-        try {
-            afd = getAssets().openFd("audio/P4_Doan1.m4a");
-            audioPlayer = new AudioPlayer(afd.getFileDescriptor(),afd.getStartOffset(),afd.getLength());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-
         btnTapDoc = (ImageButton) findViewById(R.id.imgbtnTapDoc);
         btnTapDoc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Intent intent = new Intent(MainActivity.this, MenuTapDocActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnCauHoi = (ImageButton) findViewById(R.id.imgbtnCauHoi);
+        btnCauHoi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, CauHoiActivity.class);
                 startActivity(intent);
             }
         });
@@ -72,19 +71,21 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-//    @Override
-//    protected void onPause() {
-//        super.onPause();
-//        if(audioPlayer != null) {
-//            audioPlayer.release();
-//        }
-//    }
-//
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        if(audioPlayer != null) {
-//            audioPlayer.release();
-//        }
-//    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        // Lúc app bị thoát thì không cho play nhạc nữa.
+        if(audioPlayer != null) {
+            audioPlayer.pause();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(audioPlayer != null) {
+            audioPlayer.play();
+        }
+    }
 }

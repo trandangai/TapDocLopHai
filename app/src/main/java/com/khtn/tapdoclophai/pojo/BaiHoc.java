@@ -1,9 +1,9 @@
-package com.khtn.tapdoclophai.utility;
+package com.khtn.tapdoclophai.pojo;
 
 /**
  * Created by CuongLe on 8/29/2016.
  */
-public class MenuBaiHoc {
+public class BaiHoc {
     private String maBH;
     private String tenBH;
 
@@ -23,7 +23,7 @@ public class MenuBaiHoc {
         this.tenBH = tenBH;
     }
 
-    public MenuBaiHoc(String maBH, String tenBH) {
+    public BaiHoc(String maBH, String tenBH) {
         this.maBH = maBH;
         this.tenBH = tenBH;
     }
