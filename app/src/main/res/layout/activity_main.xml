@@ -93,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:id="@+id/imgbtnCaiDat"
-                android:background="@drawable/caidat2" />
+                android:background="@drawable/about" />
         </TableRow>
 
     </TableLayout>
