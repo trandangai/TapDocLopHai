@@ -45,9 +45,9 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     public void createDatabase() {
 
         if (checkDatabase()) {
-            Log.d("Karaoke", "Database da ton tai !");
+            Log.d("checkDatabase", "Database da ton tai !");
         } else {
-            Log.d("Karaoke", "Database chua ton tai, tien hanh Copy.");
+            Log.d("checkDatabase", "Database chưa ton tai, tien hanh Copy.");
             getWritableDatabase();
             copyDatabase();
         }

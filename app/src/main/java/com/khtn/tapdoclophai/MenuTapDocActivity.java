@@ -1,10 +1,17 @@
 package com.khtn.tapdoclophai;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import com.khtn.tapdoclophai.dao.BaiDocDAO;
+import com.khtn.tapdoclophai.dao.BaiHocDAO;
+import com.khtn.tapdoclophai.pojo.BaiDoc;
 import com.khtn.tapdoclophai.pojo.BaiHoc;
 import com.khtn.tapdoclophai.adapter.MenuBaiHocArrayAdapter;
 
@@ -12,7 +19,8 @@ import java.util.ArrayList;
 
 public class MenuTapDocActivity extends AppCompatActivity {
 
-
+    private BaiDocDAO baiDocDAO;
+    private ArrayList<BaiDoc> arrBaiDocDetails;
     ListView lvListbaiHoc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +31,16 @@ public class MenuTapDocActivity extends AppCompatActivity {
         lvListbaiHoc = (ListView) findViewById(R.id.lvListBaiHoc);
 
         addControl();
+        addEvents();
+
+        baiDocDAO = new BaiDocDAO(getApplicationContext());
+        arrBaiDocDetails = baiDocDAO.getAllBaiDoc();
+        //Toast.makeText(MenuTapDocActivity.this,arrBaiDocDetails.size()+"",Toast.LENGTH_LONG).show();
     }
     public void addControl()
     {
         ArrayList<BaiHoc> arrBaiHoc = new ArrayList<BaiHoc>();
-        arrBaiHoc.add(new BaiHoc("1","Có công mài sắt có ngày nên kim"));
+        arrBaiHoc.add(new BaiHoc("1","Có công mài sắt, có ngày nên kim"));
         arrBaiHoc.add(new BaiHoc("2","Tự thuật"));
         arrBaiHoc.add(new BaiHoc("3","Ngày hôm qua đâu rồi"));
         arrBaiHoc.add(new BaiHoc("4","Phần thưởng"));
@@ -71,5 +84,21 @@ public class MenuTapDocActivity extends AppCompatActivity {
                 (MenuTapDocActivity.this,R.layout.customlayout_menubaihoc, arrBaiHoc);
 
         lvListbaiHoc.setAdapter(adapter);
+    }
+
+
+
+    public void addEvents()
+    {
+        lvListbaiHoc.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MenuTapDocActivity.this,TapdocDetailActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("BaiDocDetails",arrBaiDocDetails.get(position));
+                intent.putExtra("BaiDocBundle",bundle);
+                startActivity(intent);
+            }
+        });
     }
 }

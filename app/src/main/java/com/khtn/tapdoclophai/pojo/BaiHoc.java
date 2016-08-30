@@ -1,9 +1,11 @@
 package com.khtn.tapdoclophai.pojo;
 
+import java.io.Serializable;
+
 /**
  * Created by CuongLe on 8/29/2016.
  */
-public class BaiHoc {
+public class BaiHoc implements Serializable{
     private String maBH;
     private String tenBH;
 
