@@ -26,7 +26,10 @@
         <activity
             android:name=".CauHoiDetailActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".TapdocDetailActivity"
+        <activity
+            android:name=".TapdocDetailActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".MenuThongTin"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 
