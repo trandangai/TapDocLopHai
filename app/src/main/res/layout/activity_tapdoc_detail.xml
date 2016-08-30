@@ -13,17 +13,26 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_gravity="center_horizontal"
-        android:layout_height="200dp"
-        android:id="@+id/imgbaidocDetails" />
+        android:layout_height="150dp"
+        android:id="@+id/imgbaidocDetails"
+        android:contentDescription="@string/hinhanh_baidoc"
+        android:layout_marginBottom="5dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="......"
+        android:text="@string/txtnoiDungBaiDoc"
         android:id="@+id/txtNoiDungBaiDoc"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:singleLine="false" />
+        android:singleLine="false"
+        android:textStyle="bold" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgPlaySound"
+        android:background="@drawable/playsound"
+        android:contentDescription="@string/imgbuttonplaysound" />
 
 </LinearLayout>

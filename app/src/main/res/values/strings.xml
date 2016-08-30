@@ -2,4 +2,7 @@
     <string name="app_name">TapDocLopHai</string>
     <string name="app_title">Tiếng Việt lớp 2</string>
     <string name="note_grid">ǰǰǰǰǰǰǰǰǰǰ</string>
+    <string name="hinhanh_baidoc">Hình Ảnh Bài Đọc</string>
+    <string name="txtnoiDungBaiDoc">......</string>
+    <string name="imgbuttonplaysound">imgButtonPlaySound</string>
 </resources>
