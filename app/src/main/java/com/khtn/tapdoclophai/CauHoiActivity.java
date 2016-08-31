@@ -33,9 +33,8 @@ public class CauHoiActivity extends AppCompatActivity {
     }
     public void addControl()
     {
-        ArrayList<BaiHoc> arrBaiHoc = new ArrayList<BaiHoc>();
         BaiHocDAO bhDAO = new BaiHocDAO(getApplicationContext());
-        arrBaiHoc = bhDAO.getAllBaiHoc();
+        ArrayList<BaiHoc> arrBaiHoc = bhDAO.getAllBaiHoc();
 
         MenuBaiHocArrayAdapter adapter = new MenuBaiHocArrayAdapter
                 (CauHoiActivity.this,R.layout.customlayout_menubaihoc, arrBaiHoc);
@@ -46,6 +45,7 @@ public class CauHoiActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Intent intent = new Intent(CauHoiActivity.this, CauHoiDetailActivity.class);
+                intent.putExtra("id_baihoc", id);
                 startActivity(intent);
             }
         });
