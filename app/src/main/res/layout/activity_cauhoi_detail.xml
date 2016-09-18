@@ -3,32 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:id="@+id/lnlCauHoi"
+    android:id="@+id/container"
     android:padding="10dp">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Tập Đọc"
-        android:id="@+id/tvTapDoc1"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
-        android:id="@+id/tvCau1"
-        android:textColor="#2f67ff" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
-        android:id="@+id/tvCau1TL"
-        android:textColor="#44ba29"
-        android:layout_marginBottom="10dp" />
 </LinearLayout>

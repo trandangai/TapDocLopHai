@@ -44,13 +44,13 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     public void createDatabase() {
 
-        if (checkDatabase()) {
-            Log.d("checkDatabase", "Database da ton tai !");
-        } else {
-            Log.d("checkDatabase", "Database chưa ton tai, tien hanh Copy.");
+        //if (checkDatabase()) {
+        //    Log.d("checkDatabase", "Database da ton tai !");
+        //} else {
+        //    Log.d("checkDatabase", "Database chưa ton tai, tien hanh Copy.");
             getWritableDatabase();
             copyDatabase();
-        }
+        //}
     }
 
     private boolean checkDatabase() {

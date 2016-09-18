@@ -5,4 +5,6 @@
     <string name="hinhanh_baidoc">Hình Ảnh Bài Đọc</string>
     <string name="txtnoiDungBaiDoc">......</string>
     <string name="imgbuttonplaysound">imgButtonPlaySound</string>
+    <string name="TiepTheo">Câu tiếp theo</string>
+    <string name="ShowAnswer">Xem trả lời</string>
 </resources>
