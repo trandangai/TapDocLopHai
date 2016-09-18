@@ -1,5 +1,6 @@
 package com.khtn.tapdoclophai.fragment;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,6 +15,8 @@ import com.khtn.tapdoclophai.R;
 import com.khtn.tapdoclophai.dao.CauHoiDAO;
 import com.khtn.tapdoclophai.pojo.CauHoi;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 /**
@@ -89,6 +92,9 @@ public class CauHoiDetailFragment extends Fragment {
 
                     setCauHoi(cauHoi);
                 }
+                else {
+                    cauHoi = listCH.size() - 1;
+                }
             }
         });
     }
@@ -107,6 +113,13 @@ public class CauHoiDetailFragment extends Fragment {
         else {
 
             imgCauHoi.setVisibility(View.VISIBLE);
+            try {
+                InputStream inputStream = getActivity().getAssets().open("img/" + listCH.get(cauHoi).getImgPath());
+                Drawable drawable = Drawable.createFromStream(inputStream, null);
+                imgCauHoi.setImageDrawable(drawable);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

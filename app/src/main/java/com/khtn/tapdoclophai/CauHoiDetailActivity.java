@@ -8,7 +8,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.TextViewCompat;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -46,7 +45,7 @@ public class CauHoiDetailActivity extends FragmentActivity {
 
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.add(R.id.container, fragment, "cauHoiDetailFragment");
-        transaction.addToBackStack(null);
+        //transaction.addToBackStack(null);
         transaction.commit();
 
         /*ArrayList<CauHoi> listCH = new ArrayList<>();

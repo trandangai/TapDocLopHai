@@ -25,7 +25,7 @@ public class CauHoiActivity extends FragmentActivity {
 
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.add(R.id.container, new ListTuanFragment(), "listTuanFragment");
-        transaction.addToBackStack(null);
+        //transaction.addToBackStack(null);
         transaction.commit();
     }
 }
