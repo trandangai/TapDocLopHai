@@ -1,10 +1,12 @@
 package com.khtn.tapdoclophai;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
@@ -83,7 +85,10 @@ public class MainActivity extends AppCompatActivity {
             if(audioPlayer.isPlaying()) {
                 audioPlayer.restart();
             }
-            audioPlayer.play();
+            SharedPreferences sharedPreferences = getSharedPreferences("soundoption",MODE_PRIVATE);
+            if(sharedPreferences.getBoolean("so",true)) {
+                audioPlayer.play();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -103,8 +108,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if(audioPlayer != null) {
-            audioPlayer.play();
+        SharedPreferences sharedPreferences = getSharedPreferences("soundoption",MODE_PRIVATE);
+        if(sharedPreferences.getBoolean("so",true)) {
+            if (audioPlayer != null) {
+                audioPlayer = new AudioPlayer(afd.getFileDescriptor(),afd.getStartOffset(),afd.getLength());
+                audioPlayer.play();
+            }
+            else
+            {
+                audioPlayer = new AudioPlayer(afd.getFileDescriptor(),afd.getStartOffset(),afd.getLength());
+                audioPlayer.play();
+            }
         }
     }
 }

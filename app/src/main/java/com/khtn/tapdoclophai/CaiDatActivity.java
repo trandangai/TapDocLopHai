@@ -1,5 +1,6 @@
 package com.khtn.tapdoclophai;
 
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -11,11 +12,11 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.khtn.tapdoclophai.sqlite.MySQLiteHelper;
-import com.khtn.tapdoclophai.utility.TextHelper;
 
 public class CaiDatActivity extends AppCompatActivity {
 
-    private String option ="";
+    private boolean option;
+    SharedPreferences sharedPreferences;
     private ImageButton imgSound,imgReloadData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,23 +27,46 @@ public class CaiDatActivity extends AppCompatActivity {
         imgSound = (ImageButton) findViewById(R.id.imgbtnSound);
         imgReloadData = (ImageButton) findViewById(R.id.imgbtnReloadData);
 
+        sharedPreferences = getSharedPreferences("soundoption",MODE_PRIVATE);
         addEvents();
         ShowBtnSound();
+
     }
 
 
     private void ShowBtnSound()
     {
-        Drawable drawable = ContextCompat.getDrawable(getApplicationContext(), R.drawable.soff);
+        option = sharedPreferences.getBoolean("so",true);
+        Log.d("Sound option",option+"");
+        if(option)
+        {
+            Drawable drawable = ContextCompat.getDrawable(getApplicationContext(), R.drawable.son);
+            imgSound.setImageDrawable(drawable);
+        }
+        else
+        {
+            Drawable drawable = ContextCompat.getDrawable(getApplicationContext(), R.drawable.soff);
+            imgSound.setImageDrawable(drawable);
+        }
     }
 
     private void addEvents()
     {
-
         imgSound.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                if(option) {
+                    editor.putBoolean("so", false);
+                    editor.commit();
+                    ShowBtnSound();
+                }
+                else
+                {
+                    editor.putBoolean("so",true);
+                    editor.commit();
+                    ShowBtnSound();
+                }
             }
         });
 
