@@ -52,6 +52,11 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             copyDatabase();
         //}
     }
+    public  void reloadDatabse()
+    {
+        getWritableDatabase();
+        copyDatabase();
+    }
 
     private boolean checkDatabase() {
         SQLiteDatabase checkDB = null;

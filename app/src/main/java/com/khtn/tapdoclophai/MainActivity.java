@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton btnTapDoc;
     private ImageButton btnCauHoi;
     private ImageButton btnInfo;
+    private ImageButton btnCaiDat;
     private AudioPlayer audioPlayer;
     private AssetFileDescriptor afd;
 
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        btnInfo = (ImageButton) findViewById(R.id.imgbtnCaiDat);
+        btnInfo = (ImageButton) findViewById(R.id.imgbtnThongTin);
         btnInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,6 +66,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btnCaiDat = (ImageButton) findViewById(R.id.imgbtnCDat);
+        btnCaiDat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CaiDatActivity.class);
+                startActivity(intent);
+            }
+        });
+
         // CuongLe
         try {
             afd = getAssets().openFd("audio/ThemeSong.mp3");

@@ -85,14 +85,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:id="@+id/imgbtnBaiTap"
-                android:background="@drawable/baitap" />
+                android:id="@+id/imgbtnCDat"
+                android:background="@drawable/caidat" />
 
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:id="@+id/imgbtnCaiDat"
+                android:id="@+id/imgbtnThongTin"
                 android:background="@drawable/about" />
         </TableRow>
 

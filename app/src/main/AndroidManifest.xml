@@ -29,7 +29,11 @@
         <activity
             android:name=".TapdocDetailActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".MenuThongTin"
+        <activity
+            android:name=".MenuThongTin"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".CaiDatActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 
