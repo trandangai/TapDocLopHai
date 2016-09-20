@@ -67,7 +67,7 @@ public class CauHoiDAO {
         return listCH;
     }
 
-    public ArrayList<CauHoi> getListCauHoi(int baiHoc) {
+    public ArrayList<CauHoi> getListCauHoi(long baiHoc) {
         Log.d("test", baiHoc +"");
         ArrayList<CauHoi> listCH = new ArrayList<CauHoi>();
 

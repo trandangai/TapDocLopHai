@@ -31,7 +31,7 @@ public class CauHoiDetailActivity extends FragmentActivity {
         manager = getSupportFragmentManager();
 
         Intent intent = getIntent();
-        int idBaiHoc = intent.getIntExtra("id_baihoc", 1);
+        long idBaiHoc = intent.getLongExtra("id_baihoc", 1);
 
         lnlCauHoi = (LinearLayout) findViewById(R.id.container);
 
@@ -40,7 +40,7 @@ public class CauHoiDetailActivity extends FragmentActivity {
 
         CauHoiDetailFragment fragment = new CauHoiDetailFragment();
         Bundle bundle = new Bundle();
-        bundle.putInt("IDBaiHoc", idBaiHoc);
+        bundle.putLong("IDBaiHoc", idBaiHoc);
         fragment.setArguments(bundle);
 
         FragmentTransaction transaction = manager.beginTransaction();

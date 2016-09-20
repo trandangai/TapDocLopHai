@@ -59,7 +59,7 @@ public class ListTuanFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Intent intent = new Intent(getActivity(), CauHoiDetailActivity.class);
-                intent.putExtra("id_baihoc", id);
+                intent.putExtra("id_baihoc", id + 1);
                 startActivity(intent);
             }
         });

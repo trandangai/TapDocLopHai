@@ -61,7 +61,7 @@ public class CauHoiDetailFragment extends Fragment {
         btnTiepTheo = (Button) view.findViewById(R.id.btnTiepTheo);
 
         Bundle bundle = this.getArguments();
-        int idBaiHoc = bundle.getInt("IDBaiHoc", 1);
+        long idBaiHoc = bundle.getLong("IDBaiHoc", 1);
 
         CauHoiDAO chDAO = new CauHoiDAO(getActivity().getApplicationContext());
         listCH = chDAO.getListCauHoi(idBaiHoc);
