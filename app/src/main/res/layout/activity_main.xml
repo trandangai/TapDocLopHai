@@ -18,31 +18,39 @@
 
         android:gravity="center_horizontal">
 
-        <TextView
-            android:id="@+id/textView"
+        <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dp"
-            android:includeFontPadding="false"
-            android:text="@string/note_grid"
-            android:textSize="40sp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textIsSelectable="false" />
+            android:layout_height="200dp"
+            android:id="@+id/imageView3"
+            android:background="@drawable/background_2"
+            />
+
+        <!--<TextView-->
+            <!--android:id="@+id/textView"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginTop="50dp"-->
+            <!--android:includeFontPadding="false"-->
+            <!--android:text="@string/note_grid"-->
+            <!--android:textSize="40sp"-->
+            <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+            <!--android:textIsSelectable="false" />-->
 
         <TextView
             android:id="@+id/txtHello"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="80dp"
             android:includeFontPadding="false"
-            android:textSize="40sp"
+            android:textSize="30sp"
             android:text="@string/app_title"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textIsSelectable="false"
-            android:textColor="#eb0f3f"
+            android:textColor="#ffffff"
             android:textStyle="bold|italic" />
+
     </RelativeLayout>
 
     <TableLayout

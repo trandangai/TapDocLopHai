@@ -32,12 +32,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         TextView tx = (TextView)findViewById(R.id.txtHello);
-        TextView tx2 = (TextView)findViewById(R.id.textView);
+        //TextView tx2 = (TextView)findViewById(R.id.textView);
 
         Typeface custom_font = Typeface.createFromAsset(getAssets(),  "fonts/HP001_4_hang_bold.ttf");
 
         tx.setTypeface(custom_font);
-        tx2.setTypeface(custom_font);
+        //tx2.setTypeface(custom_font);
 
         //audioPlayer = new AudioPlayer(getApplicationContext(), R.raw.audio_test);
 
